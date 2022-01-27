@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+    <sys_documentation element="u_primary_user" label="Primary user" language="en" table="cmdb_ci_server_hardware">
+        <sys_documentation action="INSERT_OR_UPDATE">
+            <element>u_primary_user</element>
+            <help/>
+            <hint/>
+            <label>Primary user</label>
+            <language>en</language>
+            <name>cmdb_ci_server_hardware</name>
+            <plural>Primary users</plural>
+            <sys_class_name>sys_documentation</sys_class_name>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2022-01-27 16:51:37</sys_created_on>
+            <sys_id>d7d42df997150110930cbfb3f153af68</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>Primary user</sys_name>
+            <sys_package display_value="Server Patching Framework" source="x_tdbf2_server_pat">02f952b7dba164507a2ff9d4e29619c5</sys_package>
+            <sys_policy/>
+            <sys_scope display_value="Server Patching Framework">02f952b7dba164507a2ff9d4e29619c5</sys_scope>
+            <sys_update_name>sys_documentation_cmdb_ci_server_hardware_u_primary_user_en</sys_update_name>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2022-01-27 16:51:37</sys_updated_on>
+            <url/>
+            <url_target/>
+        </sys_documentation>
+    </sys_documentation>
+</record_update>

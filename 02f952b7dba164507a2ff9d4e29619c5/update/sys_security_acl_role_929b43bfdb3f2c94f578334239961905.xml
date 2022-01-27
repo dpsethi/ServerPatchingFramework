@@ -13,7 +13,7 @@
         <sys_update_name>sys_security_acl_role_929b43bfdb3f2c94f578334239961905</sys_update_name>
         <sys_updated_by>SETHID2-P3@TDBFG.com</sys_updated_by>
         <sys_updated_on>2021-05-05 19:43:49</sys_updated_on>
-        <sys_user_role display_value="td_server_patching" name="td_server_patching">3d24ff2b1b6b2410a333b95bdc4bcbe6</sys_user_role>
+        <sys_user_role display_value="">3d24ff2b1b6b2410a333b95bdc4bcbe6</sys_user_role>
         <transaction_id/>
     </sys_security_acl_role>
 </record_update>

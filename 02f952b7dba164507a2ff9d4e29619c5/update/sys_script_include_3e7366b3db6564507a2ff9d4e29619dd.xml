@@ -23,7 +23,7 @@ spfUTIL.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
         //get value of os from client side
         //var loc = this.getParameter("sysparm_loc"); //get value of location from client side
         //below construct query from server gr
-        var gr = new GlideRecord('cmdb_ci_server');
+        var gr = new GlideRecord('cmdb_ci_server_hardware');
         if (!env == '') {
             gr.addQuery('u_os_environment', env);
         }
@@ -54,7 +54,7 @@ spfUTIL.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
         gr.query();
         var strQry = gr.getEncodedQuery();
         var instanceURL = gs.getProperty('glide.servlet.uri');
-        strQry = instanceURL + "cmdb_ci_server_list.do?sysparm_query=" + strQry;
+        strQry = instanceURL + "cmdb_ci_server_hardware_list.do?sysparm_query=" + strQry;
         myObj.url = strQry; //myObj holds attribute named url
         myObj.notes = "Encoded Query is " + gr.getEncodedQuery(); //myObj added attribute called notes
         myObj.totalRecords = gr.getRowCount();
@@ -73,7 +73,7 @@ spfUTIL.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
         var loc = this.getParameter("sysparm_loc");
         var support = this.getParameter("sysparm_support");
         var vst = this.getParameter("sysparm_vst");
-        var gr = new GlideRecord('cmdb_ci_server');
+        var gr = new GlideRecord('cmdb_ci_server_hardware');
         if (!env == '') {
             gr.addQuery('u_os_environment', env);
         }
@@ -135,7 +135,7 @@ spfUTIL.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
         //var loc = this.getParameter("sysparm_loc"); //get value of location from client side
         //below construct query from server gr
         var minOneFieldInQuery = "false";
-        var gr = new GlideRecord('cmdb_ci_server');
+        var gr = new GlideRecord('cmdb_ci_server_hardware');
         if (!env == '') {
             gr.addQuery('u_os_environment', env);
             minOneFieldInQuery = "true";
@@ -217,13 +217,13 @@ spfUTIL.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
         <sys_created_by>SETHID2-P3@TDBFG.com</sys_created_by>
         <sys_created_on>2021-01-13 20:29:56</sys_created_on>
         <sys_id>3e7366b3db6564507a2ff9d4e29619dd</sys_id>
-        <sys_mod_count>34</sys_mod_count>
+        <sys_mod_count>35</sys_mod_count>
         <sys_name>spfUTIL</sys_name>
         <sys_package display_value="Server Patching Framework" source="x_tdbf2_server_pat">02f952b7dba164507a2ff9d4e29619c5</sys_package>
         <sys_policy>read</sys_policy>
         <sys_scope display_value="Server Patching Framework">02f952b7dba164507a2ff9d4e29619c5</sys_scope>
         <sys_update_name>sys_script_include_3e7366b3db6564507a2ff9d4e29619dd</sys_update_name>
-        <sys_updated_by>SETHID2-P3@TDBFG.com</sys_updated_by>
-        <sys_updated_on>2021-03-22 18:33:06</sys_updated_on>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2022-01-27 17:28:12</sys_updated_on>
     </sys_script_include>
 </record_update>
