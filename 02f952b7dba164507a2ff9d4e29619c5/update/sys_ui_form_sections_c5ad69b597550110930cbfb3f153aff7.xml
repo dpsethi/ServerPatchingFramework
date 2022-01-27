@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+    <sys_ui_form_sections form_id="c5ad69b597550110930cbfb3f153aff7" sys_domain="global" table="cmdb_ci_server_hardware" version="3">
+        <sys_ui_form_section action="INSERT_OR_UPDATE">
+            <position>1</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2022-01-27 17:29:57</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>cdad69b597550110930cbfb3f153affd</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_overrides/>
+            <sys_ui_form display_value="cmdb_ci_server_hardware" name="cmdb_ci_server_hardware" sys_domain="global" view="169d5a872300001009d5110d96bf6537">c5ad69b597550110930cbfb3f153aff7</sys_ui_form>
+            <sys_ui_section caption="Key Attributes" display_value="Key Attributes" name="cmdb_ci_server_hardware" sys_domain="global" view="169d5a872300001009d5110d96bf6537">45ad69b597550110930cbfb3f153aff9</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2022-01-27 17:29:57</sys_updated_on>
+        </sys_ui_form_section>
+        <sys_ui_form_section action="INSERT_OR_UPDATE">
+            <position>2</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2022-01-27 17:29:57</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>09ada9b597550110930cbfb3f153af0c</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_overrides/>
+            <sys_ui_form display_value="cmdb_ci_server_hardware" name="cmdb_ci_server_hardware" sys_domain="global" view="169d5a872300001009d5110d96bf6537">c5ad69b597550110930cbfb3f153aff7</sys_ui_form>
+            <sys_ui_section caption="More Attributes" display_value="More Attributes" name="cmdb_ci_server_hardware" sys_domain="global" view="169d5a872300001009d5110d96bf6537">c1ad69b597550110930cbfb3f153affe</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2022-01-27 17:29:57</sys_updated_on>
+        </sys_ui_form_section>
+        <sys_ui_form action="INSERT_OR_UPDATE">
+            <name>cmdb_ci_server_hardware</name>
+            <roles/>
+            <sys_class_name>sys_ui_form</sys_class_name>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2022-01-27 17:29:57</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>c5ad69b597550110930cbfb3f153aff7</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>cmdb_ci_server_hardware</sys_name>
+            <sys_overrides/>
+            <sys_package display_value="Server Patching Framework" source="x_tdbf2_server_pat">02f952b7dba164507a2ff9d4e29619c5</sys_package>
+            <sys_policy/>
+            <sys_scope display_value="Server Patching Framework">02f952b7dba164507a2ff9d4e29619c5</sys_scope>
+            <sys_update_name>sys_ui_form_sections_c5ad69b597550110930cbfb3f153aff7</sys_update_name>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2022-01-27 17:29:57</sys_updated_on>
+            <sys_user/>
+            <view display_value="CMDB Workspace" name="cmdb_workspace">169d5a872300001009d5110d96bf6537</view>
+            <view_name/>
+        </sys_ui_form>
+    </sys_ui_form_sections>
+</record_update>
