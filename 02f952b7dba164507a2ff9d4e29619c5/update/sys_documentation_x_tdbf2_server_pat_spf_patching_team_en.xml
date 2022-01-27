@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+    <sys_documentation element="patching_team" label="Patching Team" language="en" table="x_tdbf2_server_pat_spf">
+        <sys_documentation action="INSERT_OR_UPDATE">
+            <element>patching_team</element>
+            <help/>
+            <hint/>
+            <label>Patching Team</label>
+            <language>en</language>
+            <name>x_tdbf2_server_pat_spf</name>
+            <plural>Patching Teams</plural>
+            <sys_class_name>sys_documentation</sys_class_name>
+            <sys_created_by>SETHID2-P3@TDBFG.com</sys_created_by>
+            <sys_created_on>2021-01-13 19:54:54</sys_created_on>
+            <sys_id>f44c1e73dbe164507a2ff9d4e296191f</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>Patching Team</sys_name>
+            <sys_package display_value="Server Patching Framework" source="x_tdbf2_server_pat">02f952b7dba164507a2ff9d4e29619c5</sys_package>
+            <sys_policy/>
+            <sys_scope display_value="Server Patching Framework">02f952b7dba164507a2ff9d4e29619c5</sys_scope>
+            <sys_update_name>sys_documentation_x_tdbf2_server_pat_spf_patching_team_en</sys_update_name>
+            <sys_updated_by>SETHID2-P3@TDBFG.com</sys_updated_by>
+            <sys_updated_on>2021-01-13 19:54:54</sys_updated_on>
+            <url/>
+            <url_target/>
+        </sys_documentation>
+    </sys_documentation>
+</record_update>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_app_module">
+    <sys_app_module action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <application display_value="Server Patching Framework">018cda73dbe164507a2ff9d4e29619c8</application>
+        <assessment/>
+        <device_type/>
+        <filter/>
+        <hint/>
+        <homepage/>
+        <image/>
+        <link_type>DIRECT</link_type>
+        <map_page/>
+        <mobile_title>Adjust/Blank Patching Data</mobile_title>
+        <mobile_view_name>Mobile</mobile_view_name>
+        <name/>
+        <order>25</order>
+        <override_menu_roles>false</override_menu_roles>
+        <query>/com.glideapp.servicecatalog_cat_item_view.do?v=1&amp;sysparm_id=73f6de36db97ec10f578334239961919</query>
+        <report/>
+        <roles>td_config_mgt,td_server_patching</roles>
+        <sys_class_name>sys_app_module</sys_class_name>
+        <sys_created_by>SETHID2-P3@TDBFG.com</sys_created_by>
+        <sys_created_on>2021-04-07 17:09:16</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>357b1ef2dbd7ec10f5783342399619e0</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name>Adjust/Blank Patching Data</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="Server Patching Framework" source="x_tdbf2_server_pat">02f952b7dba164507a2ff9d4e29619c5</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Server Patching Framework">02f952b7dba164507a2ff9d4e29619c5</sys_scope>
+        <sys_update_name>sys_app_module_357b1ef2dbd7ec10f5783342399619e0</sys_update_name>
+        <sys_updated_by>SETHID2-P3@TDBFG.com</sys_updated_by>
+        <sys_updated_on>2021-04-22 18:18:05</sys_updated_on>
+        <timeline_page/>
+        <title>Adjust/Blank Patching Data</title>
+        <uncancelable>false</uncancelable>
+        <view_name/>
+        <window_name/>
+    </sys_app_module>
+</record_update>

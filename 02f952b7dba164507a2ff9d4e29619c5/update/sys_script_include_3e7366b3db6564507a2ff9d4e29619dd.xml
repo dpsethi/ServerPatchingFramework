@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>package_private</access>
+        <active>true</active>
+        <api_name>x_tdbf2_server_pat.spfUTIL</api_name>
+        <caller_access/>
+        <client_callable>true</client_callable>
+        <description/>
+        <name>spfUTIL</name>
+        <script><![CDATA[var spfUTIL = Class.create();
+spfUTIL.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
+    getURL: function() {
+        gs.info('got to getURL', '***DPS***');
+        var myObj = {}; // object to return back to client script
+        var env = this.getParameter("sysparm_env"); //get value of env from client side
+        var dac = this.getParameter("sysparm_dac"); //get value of dac from client side
+        var os = this.getParameter("sysparm_os");
+        var loc = this.getParameter("sysparm_loc");
+        var support = this.getParameter("sysparm_support");
+        var vst = this.getParameter("sysparm_vst");
+     //   var hn = this.getParameter("sysparm_hn");
+
+        //get value of os from client side
+        //var loc = this.getParameter("sysparm_loc"); //get value of location from client side
+        //below construct query from server gr
+        var gr = new GlideRecord('cmdb_ci_server');
+        if (!env == '') {
+            gr.addQuery('u_os_environment', env);
+        }
+        if (!dac == '') {
+            gr.addQuery('u_deployment_application_code', dac);
+        }
+        if (!os == '') {
+            gr.addQuery('u_os_family', os);
+        }
+        if (!loc == '') {
+            gr.addQuery('location', loc);
+        }
+        if (!support == '') {
+            gr.addQuery('u_support_group_l2', support);
+        }
+        if (!vst == '') {
+            gr.addQuery('u_virtual_server_technology', vst);
+        }
+       /*
+		if (!hn == '') {
+            //prepare newline with commas 
+            hn = hn.replace(/\n/g, ",");
+            //hn=hn.split(/[ ,]+/).join(',');
+            gr.addQuery('name', 'IN', hn);
+        }*/
+
+        gr.addQuery('asset.install_status', '!=', 7).addOrCondition('asset.install_status', '');
+        gr.query();
+        var strQry = gr.getEncodedQuery();
+        var instanceURL = gs.getProperty('glide.servlet.uri');
+        strQry = instanceURL + "cmdb_ci_server_list.do?sysparm_query=" + strQry;
+        myObj.url = strQry; //myObj holds attribute named url
+        myObj.notes = "Encoded Query is " + gr.getEncodedQuery(); //myObj added attribute called notes
+        myObj.totalRecords = gr.getRowCount();
+        return JSON.stringify(myObj);
+
+
+    },
+
+    //Blank out patch details for these servers
+    blankMe: function() {
+        gs.info("Got to blankMe function");
+        var myObj = {}; // object to return back to client script
+        var env = this.getParameter("sysparm_env"); //get value of env from client side
+        var dac = this.getParameter("sysparm_dac"); //get value of dac from client side
+        var os = this.getParameter("sysparm_os");
+        var loc = this.getParameter("sysparm_loc");
+        var support = this.getParameter("sysparm_support");
+        var vst = this.getParameter("sysparm_vst");
+        var gr = new GlideRecord('cmdb_ci_server');
+        if (!env == '') {
+            gr.addQuery('u_os_environment', env);
+        }
+        if (!dac == '') {
+            gr.addQuery('u_deployment_application_code', dac);
+        }
+        if (!os == '') {
+            gr.addQuery('u_os_family', os);
+        }
+        if (!loc == '') {
+            gr.addQuery('location', loc);
+        }
+        if (!support == '') {
+            gr.addQuery('u_support_group_l2', support);
+        }
+        if (!vst == '') {
+            gr.addQuery('u_virtual_server_technology', vst);
+        }
+
+        gr.query();
+        var strQry = gr.getEncodedQuery();
+        gs.info("Encoded query in blankMe function is :" + strQry + " : Records found " + gr.getRowCount());
+        while (gr.next()) {
+            gr.u_patch_day_of_month = '';
+            gr.u_os_patching_team = '';
+            gr.u_patch_start_time = '';
+            gr.update();
+            gs.info("Blanking data from server " + gr.sys_id);
+        }
+
+        //now update patch details using data received from client side sysparm_patchGroup and sysparm_patchDays
+        //var currentUser = gs.getUser(); 
+        //gs.info(currentUser.getDisplayName());
+        myObj.totalRecords = gr.getRowCount();
+        myObj.Qry = strQry;
+        //     myObj.feedBack = "Blank Patch details executed";
+        //	myObj.currentUser = gs.getUser();
+        return JSON.stringify(myObj);
+
+    },
+
+    patchMe2: function() {
+        gs.info("Got to patchMe2 function"); //give control back to client and update status on clien form where things currently are
+        var myObj = {}; // object to return back to client script
+        var id = this.getParameter("sysparm_id"); //get value of sys id from client configuration record
+        gs.info("DPS value in id from client ui action script is " + id);
+        var env = this.getParameter("sysparm_env"); //get value of env from client side
+        var dac = this.getParameter("sysparm_dac"); //get value of dac from client side
+        var os = this.getParameter("sysparm_os");
+        var loc = this.getParameter("sysparm_loc");
+        var support = this.getParameter("sysparm_support");
+        var vst = this.getParameter("sysparm_vst");
+        var hn = this.getParameter("sysparm_hn");
+        //data used for patching server fields
+        var patchGroup = this.getParameter("sysparm_patchGroup", patchGroup);
+        var patchDays = this.getParameter("sysparm_patchDays", patchDays);
+        var patchStartTime = this.getParameter("sysparm_patchStartTime", patchStartTime);
+        //get value of os from client side
+        //var loc = this.getParameter("sysparm_loc"); //get value of location from client side
+        //below construct query from server gr
+        var minOneFieldInQuery = "false";
+        var gr = new GlideRecord('cmdb_ci_server');
+        if (!env == '') {
+            gr.addQuery('u_os_environment', env);
+            minOneFieldInQuery = "true";
+        }
+        if (!dac == '') {
+            gr.addQuery('u_deployment_application_code', dac);
+            minOneFieldInQuery = "true";
+        }
+        if (!os == '') {
+            gr.addQuery('u_os_family', os);
+            minOneFieldInQuery = "true";
+        }
+        if (!loc == '') {
+            gr.addQuery('location', loc);
+            minOneFieldInQuery = "true";
+        }
+        if (!support == '') {
+            gr.addQuery('u_support_group_l2', support);
+            minOneFieldInQuery = "true";
+        }
+        if (!vst == '') {
+            gr.addQuery('u_virtual_server_technology', vst);
+            minOneFieldInQuery = "true";
+        }
+        if (!hn == '') {
+            //prepare newline with commas 
+            hn = hn.replace(/\n/g, ",");
+            //hn=hn.split(/[ ,]+/).join(',');
+            gr.addQuery('name', 'IN', hn);
+            minOneFieldInQuery = "true";
+        }
+
+        if (minOneFieldInQuery == "false") {
+            myObj.feedBack = "minOneFieldInQuery required, nothing updated";
+            return JSON.stringify(myObj);
+
+        }
+        // exclude server where u_patch_data_source is "manual"
+        gr.addQuery('asset.install_status', '!=', 7).addOrCondition('asset.install_status', '');
+        gr.addQuery('u_patch_data_source', '!=', 'Manual').addOrCondition('u_patch_data_source', '');
+
+        gr.query();
+        var strQry = gr.getEncodedQuery();
+        gs.info("Encoded query in patchMe2 function is :" + strQry);
+
+        if (!gr.getRowCount() <= 1000) { //limiting patching data to 1000 records, temporary for testing
+            gr.setValue('u_patch_day_of_month', patchDays); //use setValue to complement updateMultiple() method
+            gr.setValue('u_os_patching_team', patchGroup);
+            gr.setValue('u_patch_start_time', patchStartTime);
+            //send to eventQueue
+            //gs.eventQueue("x_tdbf2_server_pat.dps",gr);
+            gr.updateMultiple(); //instead of while loop using updateMultiple for faster results
+            myObj.totalRecords = gr.getRowCount();
+            myObj.feedBack = "Patch Me2 executed on total of " + gr.getRowCount() + " Servers";
+            myObj.Qry = strQry;
+            //update journal field 
+            this._updJournal(id, myObj);
+            var data = JSON.stringify(myObj);
+            return JSON.stringify(myObj);
+        } else {
+            myObj.feedBack = "Records exceeded 1000 threshold, Record count is " + gr.getRowCount();
+            return JSON.stringify(myObj);
+        }
+
+
+    },
+
+    _updJournal: function(id, data) {
+        var gr = new GlideRecord('x_tdbf2_server_pat_spf');
+        gr.addQuery('sys_id', id);
+        gr.query();
+        gr.next();
+        gr.history = gr.notes = "Total Records updated: " + data.totalRecords + "\n" + "Encoded Query Used: " + data.Qry;
+        gr.update();
+    },
+    type: 'spfUTIL'
+});]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>SETHID2-P3@TDBFG.com</sys_created_by>
+        <sys_created_on>2021-01-13 20:29:56</sys_created_on>
+        <sys_id>3e7366b3db6564507a2ff9d4e29619dd</sys_id>
+        <sys_mod_count>34</sys_mod_count>
+        <sys_name>spfUTIL</sys_name>
+        <sys_package display_value="Server Patching Framework" source="x_tdbf2_server_pat">02f952b7dba164507a2ff9d4e29619c5</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="Server Patching Framework">02f952b7dba164507a2ff9d4e29619c5</sys_scope>
+        <sys_update_name>sys_script_include_3e7366b3db6564507a2ff9d4e29619dd</sys_update_name>
+        <sys_updated_by>SETHID2-P3@TDBFG.com</sys_updated_by>
+        <sys_updated_on>2021-03-22 18:33:06</sys_updated_on>
+    </sys_script_include>
+</record_update>

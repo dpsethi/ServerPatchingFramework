@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+    <sys_choice action="INSERT_OR_UPDATE" field="virtual_server_technology" table="x_tdbf2_server_pat_spf" version="3">
+        <sys_choice_set action="INSERT_OR_UPDATE">
+            <element>virtual_server_technology</element>
+            <name>x_tdbf2_server_pat_spf</name>
+            <sys_class_name>sys_choice_set</sys_class_name>
+            <sys_created_by>SETHID2-P3@TDBFG.com</sys_created_by>
+            <sys_created_on>2021-01-13 19:54:56</sys_created_on>
+            <sys_id>1d4c1e73dbe164507a2ff9d4e29619a8</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>virtual_server_technology</sys_name>
+            <sys_package display_value="Server Patching Framework" source="x_tdbf2_server_pat">02f952b7dba164507a2ff9d4e29619c5</sys_package>
+            <sys_policy/>
+            <sys_scope display_value="Server Patching Framework">02f952b7dba164507a2ff9d4e29619c5</sys_scope>
+            <sys_update_name>sys_choice_x_tdbf2_server_pat_spf_virtual_server_technology</sys_update_name>
+            <sys_updated_by>SETHID2-P3@TDBFG.com</sys_updated_by>
+            <sys_updated_on>2021-01-13 19:54:56</sys_updated_on>
+        </sys_choice_set>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>virtual_server_technology</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Azure Public Cloud</label>
+            <language>en</language>
+            <name>x_tdbf2_server_pat_spf</name>
+            <sequence>5</sequence>
+            <synonyms/>
+            <sys_created_by>SETHID2-P3@TDBFG.com</sys_created_by>
+            <sys_created_on>2021-01-13 19:54:56</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>d54c1e73dbe164507a2ff9d4e29619ab</sys_id>
+            <sys_mod_count>2</sys_mod_count>
+            <sys_updated_by>SETHID2-P3@TDBFG.com</sys_updated_by>
+            <sys_updated_on>2021-03-13 19:17:05</sys_updated_on>
+            <value>Azure Public Cloud</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>virtual_server_technology</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Cloud</label>
+            <language>en</language>
+            <name>x_tdbf2_server_pat_spf</name>
+            <sequence>10</sequence>
+            <synonyms/>
+            <sys_created_by>SETHID2-P3@TDBFG.com</sys_created_by>
+            <sys_created_on>2021-01-13 19:54:56</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>914c1e73dbe164507a2ff9d4e29619a8</sys_id>
+            <sys_mod_count>2</sys_mod_count>
+            <sys_updated_by>SETHID2-P3@TDBFG.com</sys_updated_by>
+            <sys_updated_on>2021-03-13 19:16:58</sys_updated_on>
+            <value>Cloud</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>virtual_server_technology</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>VMware</label>
+            <language>en</language>
+            <name>x_tdbf2_server_pat_spf</name>
+            <sequence>14</sequence>
+            <synonyms/>
+            <sys_created_by>SETHID2-P3@TDBFG.com</sys_created_by>
+            <sys_created_on>2021-03-13 19:17:22</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>ab59c23adb722090f57833423996192e</sys_id>
+            <sys_mod_count>2</sys_mod_count>
+            <sys_updated_by>SETHID2-P3@TDBFG.com</sys_updated_by>
+            <sys_updated_on>2021-03-13 19:17:55</sys_updated_on>
+            <value>VMware</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>virtual_server_technology</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>VMware Cloud</label>
+            <language>en</language>
+            <name>x_tdbf2_server_pat_spf</name>
+            <sequence>15</sequence>
+            <synonyms/>
+            <sys_created_by>SETHID2-P3@TDBFG.com</sys_created_by>
+            <sys_created_on>2021-01-13 19:54:56</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>514c1e73dbe164507a2ff9d4e29619ae</sys_id>
+            <sys_mod_count>2</sys_mod_count>
+            <sys_updated_by>SETHID2-P3@TDBFG.com</sys_updated_by>
+            <sys_updated_on>2021-03-13 19:17:12</sys_updated_on>
+            <value>VMware Cloud</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>virtual_server_technology</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>VMware Cloud 2.0</label>
+            <language>en</language>
+            <name>x_tdbf2_server_pat_spf</name>
+            <sequence>20</sequence>
+            <synonyms/>
+            <sys_created_by>SETHID2-P3@TDBFG.com</sys_created_by>
+            <sys_created_on>2021-03-13 19:16:52</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>64490ab6db722090f578334239961916</sys_id>
+            <sys_mod_count>2</sys_mod_count>
+            <sys_updated_by>SETHID2-P3@TDBFG.com</sys_updated_by>
+            <sys_updated_on>2021-03-13 19:17:32</sys_updated_on>
+            <value>VMware Cloud 2.0</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>virtual_server_technology</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>LPAR</label>
+            <language>en</language>
+            <name>x_tdbf2_server_pat_spf</name>
+            <sequence>25</sequence>
+            <synonyms/>
+            <sys_created_by>SETHID2-P3@TDBFG.com</sys_created_by>
+            <sys_created_on>2021-03-13 19:18:24</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>3a794eb6db722090f57833423996195a</sys_id>
+            <sys_mod_count>2</sys_mod_count>
+            <sys_updated_by>SETHID2-P3@TDBFG.com</sys_updated_by>
+            <sys_updated_on>2021-03-13 19:18:31</sys_updated_on>
+            <value>LPAR</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>virtual_server_technology</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>VLPAR</label>
+            <language>en</language>
+            <name>x_tdbf2_server_pat_spf</name>
+            <sequence>30</sequence>
+            <synonyms/>
+            <sys_created_by>SETHID2-P3@TDBFG.com</sys_created_by>
+            <sys_created_on>2021-03-13 19:18:39</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>31b90676db722090f578334239961918</sys_id>
+            <sys_mod_count>2</sys_mod_count>
+            <sys_updated_by>SETHID2-P3@TDBFG.com</sys_updated_by>
+            <sys_updated_on>2021-03-13 19:18:46</sys_updated_on>
+            <value>VLPAR</value>
+        </sys_choice>
+    </sys_choice>
+</record_update>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_security_acl_role">
+    <sys_security_acl_role action="INSERT_OR_UPDATE">
+        <sys_class_name>sys_security_acl_role</sys_class_name>
+        <sys_created_by>SETHID2-P3@TDBFG.com</sys_created_by>
+        <sys_created_on>2021-05-05 19:46:43</sys_created_on>
+        <sys_id>ad6c0bffdb3f2c94f578334239961993</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>.td_server_patching</sys_name>
+        <sys_package display_value="Server Patching Framework" source="x_tdbf2_server_pat">02f952b7dba164507a2ff9d4e29619c5</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Server Patching Framework">02f952b7dba164507a2ff9d4e29619c5</sys_scope>
+        <sys_security_acl display_value="x_tdbf2_server_pat_spf">595c0fffdb3f2c94f578334239961921</sys_security_acl>
+        <sys_update_name>sys_security_acl_role_ad6c0bffdb3f2c94f578334239961993</sys_update_name>
+        <sys_updated_by>SETHID2-P3@TDBFG.com</sys_updated_by>
+        <sys_updated_on>2021-05-05 19:46:43</sys_updated_on>
+        <sys_user_role display_value="td_server_patching" name="td_server_patching">3d24ff2b1b6b2410a333b95bdc4bcbe6</sys_user_role>
+        <transaction_id/>
+    </sys_security_acl_role>
+</record_update>

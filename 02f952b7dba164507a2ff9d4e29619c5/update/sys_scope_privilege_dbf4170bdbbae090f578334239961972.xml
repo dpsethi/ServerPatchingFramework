@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_scope_privilege">
+    <sys_scope_privilege action="INSERT_OR_UPDATE">
+        <operation>execute</operation>
+        <source_scope display_value="Server Patching Framework">02f952b7dba164507a2ff9d4e29619c5</source_scope>
+        <status>allowed</status>
+        <sys_class_name>sys_scope_privilege</sys_class_name>
+        <sys_created_by>SETHID2-P3@TDBFG.com</sys_created_by>
+        <sys_created_on>2021-03-14 19:25:45</sys_created_on>
+        <sys_id>dbf4170bdbbae090f578334239961972</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Glide API: event management</sys_name>
+        <sys_package display_value="Server Patching Framework" source="x_tdbf2_server_pat">02f952b7dba164507a2ff9d4e29619c5</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Server Patching Framework">02f952b7dba164507a2ff9d4e29619c5</sys_scope>
+        <sys_update_name>sys_scope_privilege_dbf4170bdbbae090f578334239961972</sys_update_name>
+        <sys_updated_by>SETHID2-P3@TDBFG.com</sys_updated_by>
+        <sys_updated_on>2021-03-14 19:25:45</sys_updated_on>
+        <target_name>Glide API: event management</target_name>
+        <target_scope display_value="Global">global</target_scope>
+        <target_type>scriptable</target_type>
+    </sys_scope_privilege>
+</record_update>

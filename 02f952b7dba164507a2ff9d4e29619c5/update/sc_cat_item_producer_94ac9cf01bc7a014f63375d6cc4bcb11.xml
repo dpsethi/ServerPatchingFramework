@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sc_cat_item_producer">
+    <sc_cat_item_producer action="INSERT_OR_UPDATE">
+        <access_type>restricted</access_type>
+        <active>true</active>
+        <allow_edit>false</allow_edit>
+        <availability>on_desktop</availability>
+        <billable>false</billable>
+        <can_cancel>false</can_cancel>
+        <category/>
+        <checked_out/>
+        <cost>0</cost>
+        <custom_cart/>
+        <delivery_plan/>
+        <delivery_plan_script/>
+        <delivery_time>1970-01-03 00:00:00</delivery_time>
+        <description><![CDATA[<ol style="list-style-position: inside;"><li>Enter patching information</li><li>Use &#34;Is One Of&#34; query and copy/paste hostnames in the list collector</li><li>Move CIs to the right slush bucket</li><li>Click Submit to send the data for background processing</li></ol>
+<p>         <strong> NOTE:</strong> Patch Data Source attribute on the list collector CIs will get set to &#34;Manual&#34; once this request is processed</p>]]></description>
+        <display_price_property>non_zero</display_price_property>
+        <entitlement_script/>
+        <flow_designer_flow/>
+        <group/>
+        <hide_sp>false</hide_sp>
+        <icon/>
+        <ignore_price>false</ignore_price>
+        <image/>
+        <list_price>0</list_price>
+        <location/>
+        <mandatory_attachment>false</mandatory_attachment>
+        <meta/>
+        <mobile_hide_price>false</mobile_hide_price>
+        <mobile_picture/>
+        <mobile_picture_type>use_desktop_picture</mobile_picture_type>
+        <model/>
+        <name>SPF Update Patch Data From List Collector</name>
+        <no_attachment_v2>false</no_attachment_v2>
+        <no_cart>false</no_cart>
+        <no_cart_v2>false</no_cart_v2>
+        <no_delivery_time_v2>false</no_delivery_time_v2>
+        <no_order>false</no_order>
+        <no_order_now>false</no_order_now>
+        <no_proceed_checkout>false</no_proceed_checkout>
+        <no_quantity>false</no_quantity>
+        <no_quantity_v2>false</no_quantity_v2>
+        <no_search>false</no_search>
+        <no_wishlist_v2>false</no_wishlist_v2>
+        <omit_price>false</omit_price>
+        <order>0</order>
+        <ordered_item_link/>
+        <owner/>
+        <picture/>
+        <post_insert_script/>
+        <preview>JavaScript: popupOpenStandard("com.glideapp.servicecatalog_cat_item_view.do?v=1&amp;sysparm_id=94ac9cf01bc7a014f63375d6cc4bcb11&amp;sysparm_preview=true", "summary");</preview>
+        <price>0</price>
+        <published_ref/>
+        <recurring_frequency/>
+        <recurring_price>0</recurring_price>
+        <redirect_url>catalog_home</redirect_url>
+        <request_method/>
+        <roles/>
+        <save_options/>
+        <save_script/>
+        <sc_catalogs/>
+        <sc_ic_item_staging/>
+        <sc_ic_version/>
+        <sc_template/>
+        <script><![CDATA[var CiList = '' + producer.select_cis;
+var ciArray = CiList.split(",");
+for (var i = 0; i < ciArray.length; i++) {
+gs.info("DPS found host in record producer " + ciArray[i]);
+	var gr = new GlideRecord('cmdb_ci_server');
+	gr.addQuery('sys_id',ciArray[i]);
+	gr.query();
+	gr.next();
+	//gr.u_os_patching_team = "bb5921074fde3ac02f5aa34f9310c709";
+	gr.u_os_patching_team = producer.os_patching_team;
+	gr.u_patch_day_of_month = producer.patch_day_of_month;
+	gr.u_patch_start_time = producer.patch_start_time;
+	gr.u_patch_data_source = "Manual";
+	gr.update();
+
+}
+gs.addInfoMessage("Patching request submitted");
+//gs.setRedirect(current);]]></script>
+        <short_description>Update patching information for CIs using list collector</short_description>
+        <show_variable_help_on_load>false</show_variable_help_on_load>
+        <start_closed>false</start_closed>
+        <state/>
+        <sys_class_name>sc_cat_item_producer</sys_class_name>
+        <sys_created_by>SETHID2-P3@TDBFG.com</sys_created_by>
+        <sys_created_on>2021-03-19 16:35:25</sys_created_on>
+        <sys_id>94ac9cf01bc7a014f63375d6cc4bcb11</sys_id>
+        <sys_mod_count>10</sys_mod_count>
+        <sys_name>SPF Update Patch Data From List Collector</sys_name>
+        <sys_package display_value="Server Patching Framework" source="x_tdbf2_server_pat">02f952b7dba164507a2ff9d4e29619c5</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Server Patching Framework">02f952b7dba164507a2ff9d4e29619c5</sys_scope>
+        <sys_update_name>sc_cat_item_producer_94ac9cf01bc7a014f63375d6cc4bcb11</sys_update_name>
+        <sys_updated_by>SETHID2-P3@TDBFG.com</sys_updated_by>
+        <sys_updated_on>2021-04-22 17:13:07</sys_updated_on>
+        <table_name>cmdb_ci_server</table_name>
+        <template/>
+        <template_manager_roles/>
+        <type>item</type>
+        <use_sc_layout>true</use_sc_layout>
+        <vendor/>
+        <view/>
+        <visible_bundle>true</visible_bundle>
+        <visible_guide>true</visible_guide>
+        <visible_standalone>true</visible_standalone>
+        <workflow/>
+    </sc_cat_item_producer>
+    <sys_translated_text action="delete_multiple" query="documentkey=94ac9cf01bc7a014f63375d6cc4bcb11"/>
+    <fx_price action="delete_multiple" query="id=94ac9cf01bc7a014f63375d6cc4bcb11"/>
+    <fx_price action="INSERT_OR_UPDATE">
+        <amount>0</amount>
+        <currency display_value="CAD">CAD</currency>
+        <field>price</field>
+        <id>94ac9cf01bc7a014f63375d6cc4bcb11</id>
+        <parent/>
+        <reference_amount>0</reference_amount>
+        <reference_currency display_value="CAD">CAD</reference_currency>
+        <sys_created_by>SETHID2-P3@TDBFG.com</sys_created_by>
+        <sys_created_on>2021-03-19 16:35:26</sys_created_on>
+        <sys_id>b8fd1cb41bc7a014f63375d6cc4bcbfe</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>SETHID2-P3@TDBFG.com</sys_updated_by>
+        <sys_updated_on>2021-03-19 16:35:26</sys_updated_on>
+        <table>sc_cat_item_producer</table>
+        <type>calculated</type>
+    </fx_price>
+    <fx_price action="INSERT_OR_UPDATE">
+        <amount>0</amount>
+        <currency display_value="CAD">CAD</currency>
+        <field>recurring_price</field>
+        <id>94ac9cf01bc7a014f63375d6cc4bcb11</id>
+        <parent/>
+        <reference_amount>0</reference_amount>
+        <reference_currency display_value="CAD">CAD</reference_currency>
+        <sys_created_by>SETHID2-P3@TDBFG.com</sys_created_by>
+        <sys_created_on>2021-03-19 16:35:26</sys_created_on>
+        <sys_id>b8fd1cb41bc7a014f63375d6cc4bcbff</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>SETHID2-P3@TDBFG.com</sys_updated_by>
+        <sys_updated_on>2021-03-19 16:35:26</sys_updated_on>
+        <table>sc_cat_item_producer</table>
+        <type>calculated</type>
+    </fx_price>
+</record_update>

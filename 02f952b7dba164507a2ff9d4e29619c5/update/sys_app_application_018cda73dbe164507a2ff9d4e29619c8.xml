@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_app_application">
+    <sys_app_application action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <category display_value="">Custom Applications</category>
+        <description/>
+        <device_type>browser</device_type>
+        <hint/>
+        <name/>
+        <order/>
+        <roles>td_config_mgt,td_server_patching</roles>
+        <sys_class_name>sys_app_application</sys_class_name>
+        <sys_created_by>SETHID2-P3@TDBFG.com</sys_created_by>
+        <sys_created_on>2021-01-13 19:56:00</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>018cda73dbe164507a2ff9d4e29619c8</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_name>Server Patching Framework</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="Server Patching Framework" source="x_tdbf2_server_pat">02f952b7dba164507a2ff9d4e29619c5</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Server Patching Framework">02f952b7dba164507a2ff9d4e29619c5</sys_scope>
+        <sys_update_name>sys_app_application_018cda73dbe164507a2ff9d4e29619c8</sys_update_name>
+        <sys_updated_by>SETHID2-P3@TDBFG.com</sys_updated_by>
+        <sys_updated_on>2021-04-22 18:16:00</sys_updated_on>
+        <title>Server Patching Framework</title>
+        <view_name/>
+    </sys_app_application>
+</record_update>

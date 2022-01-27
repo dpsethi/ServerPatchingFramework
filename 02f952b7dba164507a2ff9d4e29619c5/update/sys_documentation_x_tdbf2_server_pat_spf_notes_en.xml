@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+    <sys_documentation element="notes" label="Notes" language="en" table="x_tdbf2_server_pat_spf">
+        <sys_documentation action="INSERT_OR_UPDATE">
+            <element>notes</element>
+            <help/>
+            <hint/>
+            <label>Notes</label>
+            <language>en</language>
+            <name>x_tdbf2_server_pat_spf</name>
+            <plural>Notes</plural>
+            <sys_class_name>sys_documentation</sys_class_name>
+            <sys_created_by>SETHID2-P3@TDBFG.com</sys_created_by>
+            <sys_created_on>2021-01-13 19:59:32</sys_created_on>
+            <sys_id>345ddab7dbe164507a2ff9d4e29619c9</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>Notes</sys_name>
+            <sys_package display_value="Server Patching Framework" source="x_tdbf2_server_pat">02f952b7dba164507a2ff9d4e29619c5</sys_package>
+            <sys_policy/>
+            <sys_scope display_value="Server Patching Framework">02f952b7dba164507a2ff9d4e29619c5</sys_scope>
+            <sys_update_name>sys_documentation_x_tdbf2_server_pat_spf_notes_en</sys_update_name>
+            <sys_updated_by>SETHID2-P3@TDBFG.com</sys_updated_by>
+            <sys_updated_on>2021-01-13 19:59:32</sys_updated_on>
+            <url/>
+            <url_target/>
+        </sys_documentation>
+    </sys_documentation>
+</record_update>

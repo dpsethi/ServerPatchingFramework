@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sysevent_script_action">
+    <sysevent_script_action action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <condition_script/>
+        <description/>
+        <event_name>x_tdbf2_server_pat.SPF.ProcessMe</event_name>
+        <name>SPF Process Record</name>
+        <order>100</order>
+        <script><![CDATA[//script to process Active records from spf mapping table
+gs.info("SPF - in script action process record");
+var TABLE_NAME = "x_tdbf2_server_pat_spf";
+var grSPF = new GlideRecord(TABLE_NAME);
+var ID = event.parm1.toString(); //parameter from eventQueue
+var UserID = event.parm2.toString();
+grSPF.addQuery('sys_id', ID);
+grSPF.query();
+gs.info("SPF in script action, value in ID is " + ID);
+//process this configuration
+while (grSPF.next()) {
+    var number = grSPF.number;
+    //gather variables
+    var os = grSPF.os_family;
+    //  gs.info("value in os is  " + os);
+    var dac = grSPF.deployment_application_code;
+    var vst = grSPF.virtual_server_technology;
+    var env = grSPF.environment;
+    var support = grSPF.level_2_support_group;
+    var loc = grSPF.location;
+
+    //get patch data
+    var patchGroup = grSPF.patching_team;
+    var patchDays = grSPF.patch_day_of_month;
+    var patchStartTime = grSPF.patch_start_time;
+
+    //now find servers matching criteria
+    var gr = new GlideRecord('cmdb_ci_server');
+    var minOneFieldInQuery = "false";
+    if (!env == '') {
+        gr.addQuery('u_os_environment', env);
+        minOneFieldInQuery = "true";
+    }
+    if (!dac == '') {
+        gr.addQuery('u_deployment_application_code', dac);
+        minOneFieldInQuery = "true";
+    }
+    if (!os == '') {
+        gr.addQuery('u_os_family', os);
+        minOneFieldInQuery = "true";
+    }
+    if (!loc == '') {
+        gr.addQuery('location', loc);
+        minOneFieldInQuery = "true";
+    }
+    if (!support == '') {
+        gr.addQuery('u_support_group_l2', support);
+        minOneFieldInQuery = "true";
+    }
+    if (!vst == '') {
+        gr.addQuery('u_virtual_server_technology', vst);
+        minOneFieldInQuery = "true";
+    }
+
+    // exclude server where u_patch_data_source is "manual"
+    gr.addQuery('asset.install_status', '!=', 7).addOrCondition('asset.install_status', ''); //exclude retired
+    gr.addQuery('u_patch_data_source', '!=', 'Manual').addOrCondition('u_patch_data_source', '');
+
+    if (minOneFieldInQuery == "true") {
+        //process only if min one field is sent in quer
+        gr.query();
+        gs.info(grSPF.number + " Encoded query in script action is==> " + gr.getEncodedQuery());
+        gr.setValue('u_os_patching_team', patchGroup);
+        gr.setValue('u_patch_day_of_month', patchDays);
+        gr.setValue('u_patch_start_time', patchStartTime);
+        gr.updateMultiple();
+
+        var strQry = gr.getEncodedQuery();
+        var instanceURL = gs.getProperty('glide.servlet.uri');
+        strQry = instanceURL + "cmdb_ci_server_list.do?sysparm_query=" + strQry;
+        var hist = 'Records Updated: ' + gr.getRowCount() + '\n'; 
+		hist = hist + 'URL: ' + strQry + '\n';
+		hist = hist + 'Updated by User UI action' + '\n';
+		hist = hist + 'USER ID: ' + UserID + '\n';
+		hist = hist + 'Patching team: ' + grSPF.patching_team.name + '\n';
+		hist = hist + 'Patch day of month: '+ patchDays + '\n';
+		hist = hist + 'Patch start time: ' + patchStartTime + '\n';
+
+        gs.info(number + ":Updated total via eventQueue: " + gr.getRowCount());
+    } else {
+        gs.info("SPF scheduled script no records updated for query " + gr.getEncodedQuery());
+    }
+    grSPF.history = hist;
+    grSPF.update();
+
+}]]></script>
+        <synchronous>false</synchronous>
+        <sys_class_name>sysevent_script_action</sys_class_name>
+        <sys_created_by>SETHID2-P3@TDBFG.com</sys_created_by>
+        <sys_created_on>2021-03-13 20:35:11</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>16cadefadb362090f5783342399619ec</sys_id>
+        <sys_mod_count>16</sys_mod_count>
+        <sys_name>SPF Process Record</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="Server Patching Framework" source="x_tdbf2_server_pat">02f952b7dba164507a2ff9d4e29619c5</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Server Patching Framework">02f952b7dba164507a2ff9d4e29619c5</sys_scope>
+        <sys_update_name>sysevent_script_action_16cadefadb362090f5783342399619ec</sys_update_name>
+        <sys_updated_by>SETHID2-P3@TDBFG.com</sys_updated_by>
+        <sys_updated_on>2021-05-14 14:38:01</sys_updated_on>
+    </sysevent_script_action>
+</record_update>

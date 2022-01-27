@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_ui_action">
+    <sys_ui_action action="INSERT_OR_UPDATE">
+        <action_name/>
+        <active>true</active>
+        <client>true</client>
+        <client_script_v2><![CDATA[function onClick(g_form) {
+
+}]]></client_script_v2>
+        <comments/>
+        <condition/>
+        <form_action>true</form_action>
+        <form_button>true</form_button>
+        <form_button_v2>false</form_button_v2>
+        <form_context_menu>false</form_context_menu>
+        <form_link>false</form_link>
+        <form_menu_button_v2>false</form_menu_button_v2>
+        <form_style/>
+        <hint/>
+        <isolate_script>true</isolate_script>
+        <list_action>false</list_action>
+        <list_banner_button>false</list_banner_button>
+        <list_button>false</list_button>
+        <list_choice>false</list_choice>
+        <list_context_menu>false</list_context_menu>
+        <list_link>false</list_link>
+        <list_save_with_form_button>false</list_save_with_form_button>
+        <list_style/>
+        <messages/>
+        <name>Save/Generate URL</name>
+        <onclick>getURL2()</onclick>
+        <order>100</order>
+        <script><![CDATA[//getURL2();
+function getURL2() {
+     //var envSelected = g_form.getValue('environment');
+    var env = g_form.getValue('environment');
+    var dac = g_form.getValue('deployment_application_code');
+    var os = g_form.getValue('os_family');
+    var loc = g_form.getValue('location');
+    var support = g_form.getValue("level_2_support_group");
+	var vst = g_form.getValue("virtual_server_technology");
+//	var hn = g_form.getValue("hostname");
+
+
+    var ga = new GlideAjax("spfUTIL");
+
+    ga.addParam("sysparm_name", "getURL"); //parameter to call function name in script include
+    ga.addParam("sysparm_env", env); //parameter to pass the value from g_form field to script include function
+    ga.addParam("sysparm_dac", dac);
+    ga.addParam("sysparm_os", os);
+    ga.addParam("sysparm_loc", loc);
+    ga.addParam("sysparm_support", support);
+	ga.addParam("sysparm_vst", vst);
+	//ga.addParam("sysparm_hn", hn);
+
+
+    //myEnv.getXMLAnswer(HelloWorldParse);
+    ga.getXML(callback);
+
+    function callback(response) {
+        //var serverObj = JSON.parse(response) ; //parse response back from server side (script include) code 
+        //console.log(response);
+        var answer = response.responseXML.documentElement.getAttribute('answer');
+     //   alert(answer);
+        answer = answer.evalJSON(); //transform json string to an object
+      //  g_form.setValue('notes', answer.notes);
+        g_form.setValue('url', answer.url);
+		//alert(answer.url);
+		//g_form.setValue('history', history);
+		g_form.save();
+    }
+}]]></script>
+        <show_insert>true</show_insert>
+        <show_multiple_update>false</show_multiple_update>
+        <show_query>false</show_query>
+        <show_update>true</show_update>
+        <sys_class_name>sys_ui_action</sys_class_name>
+        <sys_created_by>SETHID2-P3@TDBFG.com</sys_created_by>
+        <sys_created_on>2021-01-13 20:38:36</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>afa5a2fbdb6564507a2ff9d4e2961987</sys_id>
+        <sys_mod_count>11</sys_mod_count>
+        <sys_name>Save/Generate URL</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="Server Patching Framework" source="x_tdbf2_server_pat">02f952b7dba164507a2ff9d4e29619c5</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Server Patching Framework">02f952b7dba164507a2ff9d4e29619c5</sys_scope>
+        <sys_update_name>sys_ui_action_afa5a2fbdb6564507a2ff9d4e2961987</sys_update_name>
+        <sys_updated_by>SETHID2-P3@TDBFG.com</sys_updated_by>
+        <sys_updated_on>2021-03-30 15:18:33</sys_updated_on>
+        <table>x_tdbf2_server_pat_spf</table>
+        <ui11_compatible>true</ui11_compatible>
+        <ui16_compatible>false</ui16_compatible>
+    </sys_ui_action>
+</record_update>
